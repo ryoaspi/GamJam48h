@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      velo-run 2_0: -7857688453876669287
+      velo-run 2_1: 8411486023178579086
+      velo-run 2_2: 15877259959744506
+      velo-run 2_3: -1584258185623129697
+      velo-run 2_4: 1776501613035528135
+      velo-run 2_5: -3535213252643747188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
