@@ -1,5 +1,7 @@
+using UIManager;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Player
 {
@@ -18,23 +20,74 @@ namespace Player
         
         void Start()
         {
-        
+            _uiTimer = FindFirstObjectByType<Timer>();
+            m_slider.maxValue = _sliderValue;
+            m_sliderMax.maxValue = _sliderValue;
+            m_sliderMin.maxValue = _sliderValue;
+            _rb2D  = GetComponent<Rigidbody2D>();
+            _rb2D.linearDamping = _frein;
         }
 
         
         void Update()
         {
-        
+            if (_isRunning)
+            {
+                m_slider.value -= 0.003f;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    m_slider.value += _jumpForce;
+                }
+                MoveZone();
+                MovePlayer();
+            }
+            transform.rotation =  Quaternion.Euler(0,0,0);
         }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Finish"))
+            {
+                _isRunning = false;
+                _uiTimer.m_isRunning = false;
+                _uiTimer.SaveTimeData();
+                Debug.Log("Player has finished");
+            }
+        }
+
         #endregion
         
         
         #region Utils
 
-        private void SliderValue()
+        private void OnGUI()
         {
-            if (m_slider.value <= m_slider.maxValue) m_slider.value -= _sliderValue ;
-            if (m_slider.value >= m_slider.minValue) m_slider.value += _sliderValue ;
+            
+            // var value = Mathf.PingPong(Time.time, 1);
+            // GUILayout.Button($"{value}");
+            // m_slider.value = value;
+        }
+
+        private void MoveZone()
+        {
+            _changeZone += Time.deltaTime;
+            if (_changeZone >= _delayTime)
+            {
+                _randomRange = Random.Range(m_slider.minValue + 0.05f, m_slider.maxValue - 0.8f );
+                _changeZone = 0;
+                m_sliderMin.value = _randomRange;
+                m_sliderMax.value = _randomRange + Random.Range(0.2f, 0.5f);
+            }
+            
+        }
+
+        private void MovePlayer()
+        {
+            if (m_slider.value <= m_sliderMax.value && m_slider.value >= m_sliderMin.value)
+            {
+                _rb2D.AddForce(Vector2.right * _movePlayer);
+                
+            }
         }
         
         #endregion
@@ -42,8 +95,18 @@ namespace Player
         
         #region Private And Protected
         
-        [SerializeField] private float _sliderValue;
+        [SerializeField] private float _sliderValue = 2f;
+        [SerializeField] private float _delayTime = 1f;
+        [SerializeField] private float _jumpForce = 0.05f;
+        [SerializeField] private float _movePlayer = 5f;
+        [SerializeField] private float _frein = 3f;
         
+        private float _changeZone;
+        private float _randomRange;
+        private Timer _uiTimer;
+        private Rigidbody2D _rb2D;
+        private bool _isRunning = true;
+
         #endregion
     }
 }
