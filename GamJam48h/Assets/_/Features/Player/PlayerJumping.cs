@@ -3,25 +3,28 @@ using UnityEngine;
 
 namespace Player
 {
-    public class PlayerRunner : MonoBehaviour
+    public class PlayerJumping : MonoBehaviour
     {
         #region Api Unity
-
-        private void Start()
+        void Start()
         {
             _uiTimer = FindFirstObjectByType<Timer>();
         }
-
-        private void Update()
+        
+        void Update()
         {
-            if (_isRunning) Move();
+            if (_isJumping)
+            {
+                transform.Translate(Vector3.right * (_moveSpeed * Time.deltaTime));
+                Jumping();
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Finish"))
             {
-                _isRunning = false;
+                _isJumping = false;
                 _uiTimer.m_isRunning = false;
                 _uiTimer.SaveTimeData();
                 Debug.Log("Player has finished");
@@ -33,11 +36,11 @@ namespace Player
         
         #region Utils
 
-        private void Move()
+        private void Jumping()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                transform.position += _runSpeed * Time.deltaTime * Vector3.right;
+                transform.position += Vector3.up * (_jumpSpeed * Time.deltaTime);
             }
         }
         
@@ -46,10 +49,12 @@ namespace Player
         
         #region Private And Protected
         
-        [SerializeField] private float _runSpeed = 5f;
-        
-        private bool _isRunning = true;
+        [SerializeField] private float _jumpForce = 100f;
+        [SerializeField] private float _jumpSpeed = 10f;
+        [SerializeField] private float _moveSpeed = 10f;
+
         private Timer _uiTimer;
+        private bool _isJumping = true;
 
         #endregion
     }
