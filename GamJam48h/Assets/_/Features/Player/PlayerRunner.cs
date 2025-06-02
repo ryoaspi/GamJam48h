@@ -7,6 +7,11 @@ namespace Player
     {
         #region Api Unity
 
+        private void Start()
+        {
+            _uiTimer = FindFirstObjectByType<Timer>();
+        }
+
         private void Update()
         {
             if (_isRunning) Move();
@@ -32,7 +37,7 @@ namespace Player
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                transform.Translate(Vector2.right * (Time.deltaTime * _runSpeed));
+                transform.position += _runSpeed * Time.deltaTime * Vector3.right;
             }
         }
         
