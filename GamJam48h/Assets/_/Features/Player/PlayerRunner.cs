@@ -10,6 +10,7 @@ namespace Player
         private void Start()
         {
             _uiTimer = FindFirstObjectByType<Timer>();
+            _spritesRenderers = GetComponent<SpriteRenderer>();
         }
 
         private void Update()
@@ -38,6 +39,12 @@ namespace Player
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 transform.position += _runSpeed * Time.deltaTime * Vector3.right;
+                _left = !_left;
+                
+                if (_left == false) _spritesRenderers.sprite = _sprite[1];
+                
+                else if (_left==true) _spritesRenderers.sprite = _sprite[0];
+                
             }
         }
         
@@ -47,9 +54,12 @@ namespace Player
         #region Private And Protected
         
         [SerializeField] private float _runSpeed = 5f;
+        [SerializeField] private Sprite[] _sprite;
         
+        private SpriteRenderer _spritesRenderers;
         private bool _isRunning = true;
         private Timer _uiTimer;
+        private bool _left = true;
 
         #endregion
     }
