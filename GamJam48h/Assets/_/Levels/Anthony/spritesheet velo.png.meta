@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spritesheet velo_0: -3515414204042277593
+      spritesheet velo_1: 313442260709721423
+      spritesheet velo_2: 7887739405646385676
+      spritesheet velo_3: 2447952915551854252
+      spritesheet velo_4: -1197987836826550499
+      spritesheet velo_5: 5054187889271372391
+      spritesheet velo_6: -6293344772543410757
+      spritesheet velo_7: -3669163857950997189
+      spritesheet velo_8: 5300264954417839823
+      spritesheet velo_9: -22925938944813786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
