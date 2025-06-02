@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: b41a64d99ff52db4b9618788e79b57c7
+guid: aef0e4759d1d57c45b612478f5be3126
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5415442156664559957
-    second: course-animation_0_0
+      213: -4871844667691550314
+    second: course-animation-1_0
   - first:
-      213: -5008834767421659078
-    second: course-animation_0_1
-  - first:
-      213: -3064630319302331038
-    second: course-animation_0_2
-  - first:
-      213: -1747653656793331503
-    second: course-animation_0_3
+      213: -575513661974418263
+    second: course-animation-1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,12 +49,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: course-animation_0_0
+      name: course-animation-1_0
       rect:
         serializedVersion: 2
-        x: 274
-        y: 636
-        width: 307
-        height: 271
+        x: 166
+        y: 49
+        width: 664
+        height: 710
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,18 +118,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba6655efc0c78d4b0800000000000000
-      internalID: -5415442156664559957
+      spriteID: 6993d5d361bb36cb0800000000000000
+      internalID: -4871844667691550314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: course-animation_0_1
+      name: course-animation-1_1
       rect:
         serializedVersion: 2
-        x: 619
-        y: 731
+        x: 621
+        y: 756
         width: 163
         height: 166
       alignment: 0
@@ -146,52 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a38a435215b0d7ab0800000000000000
-      internalID: -5008834767421659078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: course-animation_0_2
-      rect:
-        serializedVersion: 2
-        x: 619
-        y: 528
-        width: 313
-        height: 233
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 265b71236fe3875d0800000000000000
-      internalID: -3064630319302331038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: course-animation_0_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 218
-        width: 598
-        height: 410
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d8cb6432461fb7e0800000000000000
-      internalID: -1747653656793331503
+      spriteID: 9ac61a6af5d5308f0800000000000000
+      internalID: -575513661974418263
       vertices: []
       indices: 
       edges: []
@@ -200,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -209,11 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      course-animation_0_0: -5415442156664559957
-      course-animation_0_1: -5008834767421659078
-      course-animation_0_2: -3064630319302331038
-      course-animation_0_3: -1747653656793331503
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
