@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      velo-run 4fps_2_0: -2171406498603742591
+      velo-run 4fps_2_1: -1263063441148506401
+      velo-run 4fps_2_2: 4239309419570272244
+      velo-run 4fps_2_3: -2026716397285923525
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
