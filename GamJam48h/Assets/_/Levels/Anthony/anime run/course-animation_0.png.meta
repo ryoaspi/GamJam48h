@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      course-animation_0_0: -5415442156664559957
+      course-animation_0_1: -5008834767421659078
+      course-animation_0_2: -3064630319302331038
+      course-animation_0_3: -1747653656793331503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
