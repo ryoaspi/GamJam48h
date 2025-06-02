@@ -9,14 +9,15 @@ namespace Player
         void Start()
         {
             _uiTimer = FindFirstObjectByType<Timer>();
+            _rigidbody2D = GetComponent<Rigidbody2D>();
         }
         
         void Update()
         {
-            if (_isJumping)
+            if (_isRunning)
             {
                 transform.Translate(Vector3.right * (_moveSpeed * Time.deltaTime));
-                Jumping();
+                if (_isJumping) Jumping();
             }
         }
 
@@ -25,9 +26,23 @@ namespace Player
             if (other.gameObject.layer == LayerMask.NameToLayer("Finish"))
             {
                 _isJumping = false;
+                _isRunning = false;
                 _uiTimer.m_isRunning = false;
                 _uiTimer.SaveTimeData();
                 Debug.Log("Player has finished");
+            }
+
+            if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+            {
+                _isJumping = false;
+                _isRunning = false;
+                _uiTimer.m_isRunning = false;
+                Debug.Log("Player failure");
+            }
+
+            if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            {
+                _isJumping = true;
             }
         }
 
@@ -40,7 +55,8 @@ namespace Player
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                transform.position += Vector3.up * (_jumpSpeed * Time.deltaTime);
+                _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+                _isJumping = false;
             }
         }
         
@@ -50,11 +66,12 @@ namespace Player
         #region Private And Protected
         
         [SerializeField] private float _jumpForce = 100f;
-        [SerializeField] private float _jumpSpeed = 10f;
         [SerializeField] private float _moveSpeed = 10f;
 
         private Timer _uiTimer;
         private bool _isJumping = true;
+        private Rigidbody2D _rigidbody2D;
+        private bool _isRunning = true;
 
         #endregion
     }
