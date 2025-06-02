@@ -1,3 +1,4 @@
+using UIManager;
 using UnityEngine;
 
 namespace Player
@@ -16,6 +17,8 @@ namespace Player
             if (other.gameObject.layer == LayerMask.NameToLayer("Finish"))
             {
                 _isRunning = false;
+                _uiTimer.m_isRunning = false;
+                _uiTimer.SaveTimeData();
                 Debug.Log("Player has finished");
             }
         }
@@ -41,7 +44,8 @@ namespace Player
         [SerializeField] private float _runSpeed = 5f;
         
         private bool _isRunning = true;
-        
+        private Timer _uiTimer;
+
         #endregion
     }
 }
