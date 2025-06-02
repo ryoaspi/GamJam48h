@@ -305,6 +305,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8386757267464677983, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
+      propertyPath: m_Size.x
+      value: 9.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386757267464677983, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
+      propertyPath: m_Size.y
+      value: 9.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386757267464677983, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b41a64d99ff52db4b9618788e79b57c7, type: 3}
+    - target: {fileID: 8386757267464677983, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3736513539145894116, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
     m_RemovedGameObjects: []
@@ -315,7 +331,7 @@ PrefabInstance:
       addedObject: {fileID: 1862613070}
     - targetCorrespondingSourceObject: {fileID: 6659587327387135147, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1862613074}
+      addedObject: {fileID: 1862613078}
   m_SourcePrefab: {fileID: 100100000, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
 --- !u!1 &792495245
 GameObject:
@@ -718,10 +734,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5a704baaf068d4ead2f73db7ec43a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 5
+  _jumpForce: 10
   _moveSpeed: 2
---- !u!58 &1862613074
-CircleCollider2D:
+  _sprites:
+  - {fileID: 21300000, guid: b41a64d99ff52db4b9618788e79b57c7, type: 3}
+  - {fileID: 21300000, guid: 6d8c8a7f8acf693479a02f0a5dc76cf2, type: 3}
+  _uiPlayer: 0.1
+--- !u!61 &1862613078
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -754,8 +774,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: -0.30734873, y: 0.4097985}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.1066666, y: 3.0266666}
+    newSize: {x: 9.32, y: 9.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.491969, y: 2.2070696}
+  m_EdgeRadius: 0
 --- !u!1 &2105545232
 GameObject:
   m_ObjectHideFlags: 0

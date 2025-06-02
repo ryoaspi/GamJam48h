@@ -10,15 +10,32 @@ namespace Player
         {
             _uiTimer = FindFirstObjectByType<Timer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
         
         void Update()
         {
+            _uiPlayerTimer += Time.deltaTime;
             if (_isRunning)
             {
                 transform.Translate(Vector3.right * (_moveSpeed * Time.deltaTime));
                 if (_isJumping) Jumping();
+                if (_uiPlayerTimer >= _uiPlayer && _left == true && _isJumping == true)
+                {
+                    _uiPlayerTimer = 0f;
+                    _left = false;
+                    _spriteRenderer.sprite = _sprites[0];
+                }
+
+                if (_uiPlayerTimer >= _uiPlayer && _left == false && _isJumping == true)
+                {
+                    _uiPlayerTimer = 0f;
+                    _left = true;
+                    _spriteRenderer.sprite = _sprites[1];
+                }
+                
             }
+            
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -57,6 +74,7 @@ namespace Player
             {
                 _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
                 _isJumping = false;
+                _spriteRenderer.sprite = _sprites[1];
             }
         }
         
@@ -67,11 +85,16 @@ namespace Player
         
         [SerializeField] private float _jumpForce = 100f;
         [SerializeField] private float _moveSpeed = 10f;
-
+        [SerializeField] private Sprite[] _sprites;
+        [SerializeField] private float _uiPlayer = 0.5f;
+        
+        private SpriteRenderer _spriteRenderer;
         private Timer _uiTimer;
         private bool _isJumping = true;
         private Rigidbody2D _rigidbody2D;
         private bool _isRunning = true;
+        private float _uiPlayerTimer = 0f;
+        private bool _left = true;
 
         #endregion
     }

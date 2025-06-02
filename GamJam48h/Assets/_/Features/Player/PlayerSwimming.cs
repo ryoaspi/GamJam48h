@@ -26,11 +26,13 @@ namespace Player
             m_sliderMin.maxValue = _sliderValue;
             _rb2D  = GetComponent<Rigidbody2D>();
             _rb2D.linearDamping = _frein;
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         
         void Update()
         {
+            _uiPlayerTimer += Time.deltaTime;
             if (_isRunning)
             {
                 m_slider.value -= 0.003f;
@@ -40,6 +42,27 @@ namespace Player
                 }
                 MoveZone();
                 MovePlayer();
+                if (_uiPlayerTimer >= _uiPlayer && _spriteIndex == 0)
+                {
+                    _uiPlayerTimer = 0;
+                    _spriteIndex = 1;
+                    _spriteRenderer.sprite = _sprites[_spriteIndex];
+                }
+
+                if (_uiPlayerTimer >= _uiPlayer && _spriteIndex == 1)
+                {
+                    _uiPlayerTimer = 0;
+                    _spriteIndex = 2;
+                    _spriteRenderer.sprite = _sprites[_spriteIndex];
+                }
+
+                if (_uiPlayerTimer >= _uiPlayer && _spriteIndex == 2)
+                {
+                    _uiPlayerTimer = 0;
+                    _spriteIndex = 0;
+                    _spriteRenderer.sprite = _sprites[_spriteIndex];
+                }
+                
             }
             transform.rotation =  Quaternion.Euler(0,0,0);
         }
@@ -100,12 +123,17 @@ namespace Player
         [SerializeField] private float _jumpForce = 0.05f;
         [SerializeField] private float _movePlayer = 5f;
         [SerializeField] private float _frein = 3f;
+        [SerializeField] private Sprite[] _sprites;
+        [SerializeField] private float _uiPlayer = 0.1f;
         
+        private SpriteRenderer _spriteRenderer;
         private float _changeZone;
         private float _randomRange;
         private Timer _uiTimer;
         private Rigidbody2D _rb2D;
         private bool _isRunning = true;
+        private int _spriteIndex;
+        private float _uiPlayerTimer;
 
         #endregion
     }
