@@ -8,6 +8,7 @@ namespace UIManager
     {   
         #region Publics
 
+        public float m_timer = 0;
         public bool m_isRunning = true;
         public int m_miniGameIndex =0 ; //Index du mini jeu
         public string m_playerName = "Player"; // Sera rempli ailleurs (ex : menu)
@@ -25,7 +26,7 @@ namespace UIManager
         {
             if (m_isRunning)
             {
-                _timer += Time.deltaTime;
+                m_timer += Time.deltaTime;
                 UiTimer();
             }
             
@@ -38,7 +39,7 @@ namespace UIManager
 
         public void UiTimer()
         {
-            _TimerText.text = _timer.ToString("0.00");
+            _TimerText.text = m_timer.ToString("0.00");
         }
 
         public void SaveTimeData()
@@ -59,7 +60,7 @@ namespace UIManager
             }
             
             if (m_miniGameIndex >= 0 && m_miniGameIndex < data.m_times.Length)
-                data.m_times[m_miniGameIndex] = _timer;
+                data.m_times[m_miniGameIndex] = m_timer;
             
             string json = JsonUtility.ToJson(data, true);
             File.WriteAllText(json, json);
@@ -67,7 +68,7 @@ namespace UIManager
 
         public float GetCurrentTime()
         {
-            return _timer;
+            return m_timer;
         }
 
         public static float GetTotalTime()
@@ -93,7 +94,7 @@ namespace UIManager
         
         [SerializeField] private TMP_Text _TimerText; 
 
-        private float _timer = 0;
+        
         private string _timerDataFile = "TimerData.json";
 
         #endregion
@@ -103,6 +104,6 @@ namespace UIManager
     public class TimerData
     {
         public string m_playerName;
-        public float[] m_times = new float[6]; // Pour les 3 Mini_jeux
+        public float[] m_times = new float[3]; // Pour les 3 Mini_jeux
     }
 }

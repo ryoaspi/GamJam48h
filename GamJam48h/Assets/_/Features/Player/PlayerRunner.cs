@@ -25,7 +25,8 @@ namespace Player
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
                 _uiTimer.SaveTimeData();
-                Debug.Log("Player has finished");
+                _changeGame.SetActive(true);
+                _currentGame.SetActive(false);
             }
         }
 
@@ -55,6 +56,8 @@ namespace Player
         
         [SerializeField] private float _runSpeed = 5f;
         [SerializeField] private Sprite[] _sprite;
+        [SerializeField] private GameObject _changeGame;
+        [SerializeField] private GameObject _currentGame;
         
         private SpriteRenderer _spritesRenderers;
         private bool _isRunning = true;
