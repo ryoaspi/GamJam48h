@@ -44,7 +44,6 @@ namespace Player
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 transform.Translate(Vector3.right * (_runSpeed * Time.deltaTime));
-                // transform.position += _runSpeed * Time.deltaTime * Vector3.right;
                 _left = !_left;
                 
                 if (_left == false) _spritesRenderers.sprite = _sprite[1];
