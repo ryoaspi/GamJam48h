@@ -47,7 +47,7 @@ namespace Player
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
                 _currentGame.SetActive(false);  
-                _uiTimer.SaveTimeData();
+                
                 
                 
             }
@@ -62,6 +62,16 @@ namespace Player
             if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 _isJumping = true;
+            }
+        }
+
+        private void OntriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+            {
+
+                _uiTimer.m_timer += 2f;
+                
             }
         }
 

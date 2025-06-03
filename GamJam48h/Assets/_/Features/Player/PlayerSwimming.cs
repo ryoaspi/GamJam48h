@@ -74,8 +74,8 @@ namespace Player
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
                 _currentGame.SetActive(false);
-                _uiTimer.SaveTimeData();
                 _changeGame.SetActive(true);
+                
                 
             }
         }
