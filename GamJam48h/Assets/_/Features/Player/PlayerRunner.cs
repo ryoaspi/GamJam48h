@@ -22,11 +22,11 @@ namespace Player
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Finish"))
             {
+                _changeGame.SetActive(true);
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
-                _uiTimer.SaveTimeData();
-                _changeGame.SetActive(true);
                 _currentGame.SetActive(false);
+                _uiTimer.SaveTimeData();
             }
         }
 
