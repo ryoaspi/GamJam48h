@@ -3,8 +3,9 @@ using UnityEngine;
 
 namespace UIManager
 {
-    public class GameData : MonoBehaviour
+    [System.Serializable]
+    public class GameData 
     {
-        public List<TimerData> players = new List<TimerData>();
+        public List<PlayerTimeData> players = new List<PlayerTimeData>();
     }
 }

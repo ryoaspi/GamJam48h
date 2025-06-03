@@ -11,6 +11,7 @@ namespace Player
             _uiTimer = FindFirstObjectByType<Timer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _recordTimer = FindFirstObjectByType<TimerData>();
         }
         
         void Update()
@@ -46,16 +47,10 @@ namespace Player
                 _isJumping = false;
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
+                _recordTimer.SaveTimeData();
                 _currentGame.SetActive(false);  
                 
                 
-                
-            }
-
-            if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
-            {
-
-                _uiTimer.m_timer += 2f;
                 
             }
 
@@ -104,6 +99,7 @@ namespace Player
         
         private SpriteRenderer _spriteRenderer;
         private Timer _uiTimer;
+        private TimerData _recordTimer;
         private bool _isJumping = true;
         private Rigidbody2D _rigidbody2D;
         private bool _isRunning = true;

@@ -15,7 +15,11 @@ namespace UIManager
         #region Api Unity
         private void OnEnable()
         {
-            if (!string.IsNullOrEmpty(_nameInput.text)) m_playerName = _nameInput.text;
+            if (!string.IsNullOrEmpty(m_playerName))
+            {
+                _nameInput.text = m_playerName;
+                _playerName.text = m_playerName;
+            }
         }
 
 
@@ -30,7 +34,11 @@ namespace UIManager
 
         public void SetName(string name)
         {
-            _playerName.text = name;
+            if (!string.IsNullOrEmpty(name))
+            {
+                m_playerName = name;
+                _playerName.text = name;
+            }
         }
         
         #endregion
