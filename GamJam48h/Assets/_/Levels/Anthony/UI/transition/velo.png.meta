@@ -115,59 +115,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: velo_0
-      rect:
-        serializedVersion: 2
-        x: 524
-        y: 373
-        width: 276
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e26c9cf9a160fb0f0800000000000000
-      internalID: -1099153072635394514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: velo_1
-      rect:
-        serializedVersion: 2
-        x: 558
-        y: 561
-        width: 157
-        height: 148
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e212ad8a4e656a910800000000000000
-      internalID: 1848260237167567150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: velo_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
-        width: 357
-        height: 359
+        y: 0
+        width: 902
+        height: 709
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,77 +136,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: velo_3
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 35
-        width: 105
-        height: 440
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf871635c2fd046f0800000000000000
-      internalID: -702316160399345412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: velo_4
-      rect:
-        serializedVersion: 2
-        x: 430
-        y: 203
-        width: 166
-        height: 262
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de9336cfa48041c30800000000000000
-      internalID: 4329094259964852717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: velo_5
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 0
-        width: 358
-        height: 357
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a89dc2059859df7c0800000000000000
-      internalID: -4035905274065921654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8ba4194f974351e4e87a2e828d4b9648
     internalID: 0
     vertices: []
     indices: 
