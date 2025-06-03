@@ -131,6 +131,7 @@ namespace Player
         [SerializeField] private float _uiPlayer = 0.1f;
         [SerializeField] private GameObject _changeGame;
         [SerializeField] private GameObject _currentGame;
+        [SerializeField] private float _removeslider = 0.03f;
         
         private SpriteRenderer _spriteRenderer;
         private float _changeZone;
