@@ -46,6 +46,7 @@ namespace Player
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
                 _recordTimer.SaveTimeData();
+                _camera.gameObject.SetActive(true);
                 _currentGame.SetActive(false);  
             }
 
@@ -91,6 +92,7 @@ namespace Player
         [SerializeField] private GameObject _currentGame;
         [SerializeField] private Timer _uiTimer;
         [SerializeField] private TimerData _recordTimer;
+        [SerializeField] private Camera _camera;
         
         private SpriteRenderer _spriteRenderer;
        

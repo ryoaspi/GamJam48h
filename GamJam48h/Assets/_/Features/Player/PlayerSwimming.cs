@@ -74,9 +74,8 @@ namespace Player
                 _uiTimer.m_isRunning = false;
                 _changeGame.SetActive(true);
                 _recordTimer.SaveTimeData();
+                _camera.gameObject.SetActive(true);
                 _currentGame.SetActive(false);
-                
-                
             }
         }
 
@@ -124,6 +123,7 @@ namespace Player
         [SerializeField] private float _removeslider = 0.03f;
         [SerializeField] private Timer _uiTimer;
         [SerializeField] private TimerData _recordTimer;
+        [SerializeField] private Camera _camera;
         
         private SpriteRenderer _spriteRenderer;
         private float _changeZone;

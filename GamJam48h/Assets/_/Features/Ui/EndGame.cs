@@ -10,12 +10,14 @@ namespace UIManager
         
         void Start()
         {
+            
             string path = Path.Combine(Application.persistentDataPath, "TimerData.json");
-            if (File.Exists(path))
+            string json = File.ReadAllText(path);
+            GameData data = JsonUtility.FromJson<GameData>(json);
+            PlayerTimeData player = data.players.Find(p => p.m_playerName == PlayerName.m_playerName);
+            if (player != null)
             {
-                string json = File.ReadAllText(path);
-                TimerData data = JsonUtility.FromJson<TimerData>(json);
-                _nameText.text = "Joueur : " + data.m_playerName;
+                _nameText.text = "Joueur : " + data.players;
                 _scoreText.text = "Temps total : " + TimerData.GetTotalTime().ToString("0.00") + " sec";
             }
             else
@@ -38,8 +40,6 @@ namespace UIManager
 
         [SerializeField] private TMP_Text _nameText;
         [SerializeField] private TMP_Text _scoreText;
-        
-        
 
         #endregion
     }

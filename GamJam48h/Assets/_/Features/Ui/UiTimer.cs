@@ -20,6 +20,7 @@ namespace UIManager
             if (_timer <= 0)
             {
                 _miniGameOne.SetActive(true);
+                _camera.gameObject.SetActive(false);
                 gameObject.SetActive(false);
             }
         }
@@ -32,6 +33,7 @@ namespace UIManager
         [SerializeField] private float _delayTime = 3f;
         [SerializeField] private GameObject _miniGameOne;
         [SerializeField] private TMP_Text _timerText;
+        [SerializeField] private Camera _camera;
         
         private float _timer;
 
