@@ -1,4 +1,3 @@
-using System.Numerics;
 using UIManager;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -11,9 +10,7 @@ namespace Player
 
         private void Start()
         {
-            _uiTimer = FindFirstObjectByType<Timer>();
             _spritesRenderers = GetComponent<SpriteRenderer>();
-            _recordTimer = FindFirstObjectByType<TimerData>();
         }
 
         private void Update()
@@ -62,11 +59,12 @@ namespace Player
         [SerializeField] private Sprite[] _sprite;
         [SerializeField] private GameObject _changeGame;
         [SerializeField] private GameObject _currentGame;
+        [SerializeField] private Timer _uiTimer;
+        [SerializeField] private TimerData _recordTimer;
         
         private SpriteRenderer _spritesRenderers;
         private bool _isRunning = true;
-        private Timer _uiTimer;
-        private TimerData _recordTimer;
+
         private bool _left = true;
 
         #endregion
