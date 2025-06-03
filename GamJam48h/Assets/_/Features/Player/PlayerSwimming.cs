@@ -74,7 +74,9 @@ namespace Player
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
                 _uiTimer.SaveTimeData();
-                Debug.Log("Player has finished");
+                _changeGame.SetActive(true);
+                _currentGame.SetActive(false);
+                
             }
         }
 
@@ -125,6 +127,8 @@ namespace Player
         [SerializeField] private float _frein = 3f;
         [SerializeField] private Sprite[] _sprites;
         [SerializeField] private float _uiPlayer = 0.1f;
+        [SerializeField] private GameObject _changeGame;
+        [SerializeField] private GameObject _currentGame;
         
         private SpriteRenderer _spriteRenderer;
         private float _changeZone;

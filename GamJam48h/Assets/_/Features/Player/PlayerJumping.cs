@@ -42,19 +42,20 @@ namespace Player
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Finish"))
             {
+                _changeGame.SetActive(true);
                 _isJumping = false;
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
                 _uiTimer.SaveTimeData();
-                Debug.Log("Player has finished");
+                _currentGame.SetActive(false);
+                
             }
 
             if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
             {
-                _isJumping = false;
-                _isRunning = false;
-                _uiTimer.m_isRunning = false;
-                Debug.Log("Player failure");
+
+                _uiTimer.m_timer += 2f;
+                
             }
 
             if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
@@ -74,7 +75,7 @@ namespace Player
             {
                 _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
                 _isJumping = false;
-                _spriteRenderer.sprite = _sprites[1];
+                _spriteRenderer.sprite = _sprites[2];
             }
         }
         
@@ -87,6 +88,8 @@ namespace Player
         [SerializeField] private float _moveSpeed = 10f;
         [SerializeField] private Sprite[] _sprites;
         [SerializeField] private float _uiPlayer = 0.5f;
+        [SerializeField] private GameObject _changeGame;
+        [SerializeField] private GameObject _currentGame;
         
         private SpriteRenderer _spriteRenderer;
         private Timer _uiTimer;

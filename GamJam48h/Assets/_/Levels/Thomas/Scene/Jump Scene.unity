@@ -319,10 +319,12 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b41a64d99ff52db4b9618788e79b57c7, type: 3}
     - target: {fileID: 8386757267464677983, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3736513539145894116, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
+    - {fileID: 4489628095414968265, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
+    - {fileID: 5040046319979041002, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -740,6 +742,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b41a64d99ff52db4b9618788e79b57c7, type: 3}
   - {fileID: 21300000, guid: 6d8c8a7f8acf693479a02f0a5dc76cf2, type: 3}
   _uiPlayer: 0.1
+  _changeGame: {fileID: 0}
 --- !u!61 &1862613078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -928,7 +931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5105ea0f2249204fb285d7f5ec9bd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_timer: 0
   m_isRunning: 1
+  m_miniGameIndex: 0
+  m_playerName: Player
   _TimerText: {fileID: 2125683466}
 --- !u!114 &2125683466
 MonoBehaviour:
