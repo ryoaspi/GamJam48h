@@ -676,10 +676,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d7b8bf664e4a05b07b1ea74679ca99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_miniGameIndex: 3
   m_playerName: Player
+  m_times:
+  - 0
+  - 0
+  - 0
+  m_miniGameIndex: 2
   m_timer: 0
-  _timerText: {fileID: 0}
+  _timerText: {fileID: 67129660}
 --- !u!1 &68907812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2861,8 +2865,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d7b8bf664e4a05b07b1ea74679ca99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_miniGameIndex: 1
   m_playerName: Player
+  m_times:
+  - 0
+  - 0
+  - 0
+  m_miniGameIndex: 0
   m_timer: 0
   _timerText: {fileID: 510550349}
 --- !u!1 &519711941
@@ -3256,7 +3264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &609046985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4154,10 +4162,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d7b8bf664e4a05b07b1ea74679ca99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_miniGameIndex: 2
   m_playerName: Player
+  m_times:
+  - 0
+  - 0
+  - 0
+  m_miniGameIndex: 1
   m_timer: 0
-  _timerText: {fileID: 0}
+  _timerText: {fileID: 796061314}
 --- !u!1 &808508452
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,7 +4515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &863242307
 RectTransform:
   m_ObjectHideFlags: 0

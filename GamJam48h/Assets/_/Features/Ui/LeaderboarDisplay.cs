@@ -30,8 +30,8 @@ namespace UIManager
                 scores.Add((player.m_playerName, total));
             }
 
-            scores = scores.OrderBy(s => s.total).ToList();
-            _leaderboarText.text = "Classement : /n";
+            scores = scores.OrderBy(s => s.total).Take(5).ToList();
+            _leaderboarText.text = "Classement : \n " ;
 
             int rank = 1;
             foreach (var score in scores)

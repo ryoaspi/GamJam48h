@@ -7,9 +7,10 @@ namespace UIManager
     public class TimerData: MonoBehaviour
     {
         #region publics
-        
+
+        public string m_playerName;
+        public float[] m_times = new float[3];
         public int m_miniGameIndex =0 ; //Index du mini jeu
-        public string m_playerName = "Player"; // Sera rempli ailleurs (ex : menu)
         public float m_timer = 0;
         
         #endregion
@@ -19,7 +20,7 @@ namespace UIManager
 
         private void Start()
         {
-            string playerName = PlayerName.m_playerName;
+            m_playerName = PlayerName.m_playerName;
             _timer = FindFirstObjectByType<Timer>();
             m_timer = _timer.m_timer;
             _timerText.text = _timer.m_TimerText.text;
@@ -49,12 +50,14 @@ namespace UIManager
             PlayerTimeData playerData = data.players.Find(p => p.m_playerName == PlayerName.m_playerName);
             if (playerData == null)
             {
-                playerData = new PlayerTimeData();
+                playerData = new PlayerTimeData(PlayerName.m_playerName);
                 data.players.Add(playerData);
             }
-            
+
             if (m_miniGameIndex >= 0 && m_miniGameIndex < playerData.m_times.Length)
+            {
                 playerData.m_times[m_miniGameIndex] = m_timer;
+            }
             
             string newJson = JsonUtility.ToJson(data, true);
             File.WriteAllText(path, newJson);
