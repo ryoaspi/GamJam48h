@@ -27,6 +27,7 @@ namespace Player
             _rb2D  = GetComponent<Rigidbody2D>();
             _rb2D.linearDamping = _frein;
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _recordTimer = FindFirstObjectByType<TimerData>();
         }
 
         
@@ -73,8 +74,9 @@ namespace Player
             {
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
-                _currentGame.SetActive(false);
                 _changeGame.SetActive(true);
+                _recordTimer.SaveTimeData();
+                _currentGame.SetActive(false);
                 
                 
             }
@@ -134,6 +136,7 @@ namespace Player
         private float _changeZone;
         private float _randomRange;
         private Timer _uiTimer;
+        private TimerData _recordTimer;
         private Rigidbody2D _rb2D;
         private bool _isRunning = true;
         private int _spriteIndex;

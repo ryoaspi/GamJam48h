@@ -11,6 +11,7 @@ namespace Player
         {
             _uiTimer = FindFirstObjectByType<Timer>();
             _spritesRenderers = GetComponent<SpriteRenderer>();
+            _recordTimer = FindFirstObjectByType<TimerData>();
         }
 
         private void Update()
@@ -25,6 +26,7 @@ namespace Player
                 _changeGame.SetActive(true);
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
+                _recordTimer.SaveTimeData();                
                 _currentGame.SetActive(false);
                 
             }
@@ -62,6 +64,7 @@ namespace Player
         private SpriteRenderer _spritesRenderers;
         private bool _isRunning = true;
         private Timer _uiTimer;
+        private TimerData _recordTimer;
         private bool _left = true;
 
         #endregion
