@@ -65,7 +65,7 @@ namespace Player
             }
         }
 
-        private void OntriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
             {
