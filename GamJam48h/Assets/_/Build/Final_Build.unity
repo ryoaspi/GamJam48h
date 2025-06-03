@@ -2942,9 +2942,21 @@ PrefabInstance:
       value: MiniGameThree
       objectReference: {fileID: 0}
     - target: {fileID: 4634957311571473532, guid: e8ac9abcf30169045bddedc179bc2551, type: 3}
+      propertyPath: _frein
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634957311571473532, guid: e8ac9abcf30169045bddedc179bc2551, type: 3}
       propertyPath: _changeGame
       value: 
       objectReference: {fileID: 609046984}
+    - target: {fileID: 4634957311571473532, guid: e8ac9abcf30169045bddedc179bc2551, type: 3}
+      propertyPath: _movePlayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634957311571473532, guid: e8ac9abcf30169045bddedc179bc2551, type: 3}
+      propertyPath: _removeslider
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

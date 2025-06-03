@@ -87,14 +87,6 @@ namespace Player
         
         #region Utils
 
-        private void OnGUI()
-        {
-            
-            // var value = Mathf.PingPong(Time.time, 1);
-            // GUILayout.Button($"{value}");
-            // m_slider.value = value;
-        }
-
         private void MoveZone()
         {
             _changeZone += Time.deltaTime;

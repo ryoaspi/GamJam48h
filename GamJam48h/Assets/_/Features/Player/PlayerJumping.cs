@@ -49,9 +49,6 @@ namespace Player
                 _uiTimer.m_isRunning = false;
                 _recordTimer.SaveTimeData();
                 _currentGame.SetActive(false);  
-                
-                
-                
             }
 
             if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
@@ -64,9 +61,7 @@ namespace Player
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
             {
-
                 _uiTimer.m_timer += 2f;
-                
             }
         }
 
