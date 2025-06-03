@@ -687,7 +687,7 @@ Transform:
   m_GameObject: {fileID: 7772162336704324539}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.834, z: 0}
+  m_LocalPosition: {x: 0, y: 3.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -742,7 +742,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 45, y: 20}
+  m_Size: {x: 45, y: 30}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -986,9 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_timer: 0
   m_isRunning: 1
-  m_miniGameIndex: 0
-  m_playerName: Player
-  _TimerText: {fileID: 6421297457723734985}
+  m_TimerText: {fileID: 6421297457723734985}
 --- !u!1 &8241439975070752319
 GameObject:
   m_ObjectHideFlags: 0
