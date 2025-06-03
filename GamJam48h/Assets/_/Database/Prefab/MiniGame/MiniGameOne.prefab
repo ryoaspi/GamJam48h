@@ -847,6 +847,7 @@ GameObject:
   - component: {fileID: 6294627307150210414}
   - component: {fileID: 6421297457723734985}
   - component: {fileID: 2592048132532292895}
+  - component: {fileID: 8938865514611340783}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -910,8 +911,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4289555736
+  m_fontColor: {r: 0.09411765, g: 0.42745098, b: 0.6784314, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -987,6 +988,22 @@ MonoBehaviour:
   m_timer: 0
   m_isRunning: 1
   m_TimerText: {fileID: 6421297457723734985}
+--- !u!114 &8938865514611340783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049772199096697886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d7b8bf664e4a05b07b1ea74679ca99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_miniGameIndex: 1
+  m_playerName: Player
+  m_timer: 0
+  _timerText: {fileID: 6421297457723734985}
 --- !u!1 &8241439975070752319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +1019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7438424770951379848
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,6 +1160,10 @@ PrefabInstance:
       propertyPath: _runSpeed
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4489628095414968265, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
+      propertyPath: _currentGame
+      value: 
+      objectReference: {fileID: 8241439975070752319}
     - target: {fileID: 6659587327387135147, guid: 4432e3757f83ce14ea2f8f638956c540, type: 3}
       propertyPath: m_Name
       value: PlayerBike
