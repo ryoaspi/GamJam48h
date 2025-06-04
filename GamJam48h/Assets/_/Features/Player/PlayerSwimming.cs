@@ -1,3 +1,4 @@
+using System;
 using UIManager;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,9 +27,14 @@ namespace Player
             _rb2D  = GetComponent<Rigidbody2D>();
             _rb2D.linearDamping = _frein;
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _startPosition = transform.position;
         }
 
-        
+        private void OnEnable()
+        {
+            
+        }
+
         void Update()
         {
             _uiPlayerTimer += Time.deltaTime;
@@ -76,6 +82,8 @@ namespace Player
                 _recordTimer.SaveTimeData();
                 _camera.gameObject.SetActive(true);
                 _currentGame.SetActive(false);
+                
+                ResetPlayer();
             }
         }
 
@@ -105,6 +113,15 @@ namespace Player
                 
             }
         }
+
+        private void ResetPlayer()
+        {
+            transform.position = _startPosition;
+            _isRunning = true;
+            _uiTimer.m_isRunning = true;
+            _uiTimer.m_timer = 0f;
+            _spriteRenderer.sprite = _sprites[_spriteIndex];
+        }
         
         #endregion
         
@@ -128,7 +145,7 @@ namespace Player
         private SpriteRenderer _spriteRenderer;
         private float _changeZone;
         private float _randomRange;
-
+        private Vector3 _startPosition;
         private Rigidbody2D _rb2D;
         private bool _isRunning = true;
         private int _spriteIndex;

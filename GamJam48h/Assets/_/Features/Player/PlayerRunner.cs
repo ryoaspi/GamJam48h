@@ -1,3 +1,4 @@
+using System;
 using UIManager;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -11,6 +12,12 @@ namespace Player
         private void Start()
         {
             _spritesRenderers = GetComponent<SpriteRenderer>();
+            _startPosition = transform.position;
+        }
+
+        private void OnEnable()
+        {
+            
         }
 
         private void Update()
@@ -28,7 +35,9 @@ namespace Player
                 _recordTimer.SaveTimeData();     
                 _camera.gameObject.SetActive(true);
                 _currentGame.SetActive(false);
-                
+
+                ResetPlayer();
+
             }
         }
 
@@ -50,6 +59,18 @@ namespace Player
                 
             }
         }
+
+        private void ResetPlayer()
+        {
+            transform.position = _startPosition;
+            _left = true;
+            _spritesRenderers.sprite = _sprite[0];
+            
+            _isRunning = true;
+            _uiTimer.m_isRunning = true;
+            _uiTimer.m_timer = 0f;
+
+        }
         
         #endregion
         
@@ -66,7 +87,7 @@ namespace Player
         
         private SpriteRenderer _spritesRenderers;
         private bool _isRunning = true;
-
+        private Vector3 _startPosition;
         private bool _left = true;
 
         #endregion

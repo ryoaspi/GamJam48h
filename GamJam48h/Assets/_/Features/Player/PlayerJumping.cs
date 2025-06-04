@@ -1,3 +1,4 @@
+using System;
 using UIManager;
 using UnityEngine;
 
@@ -10,8 +11,14 @@ namespace Player
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _startPosition = transform.position;
         }
-        
+
+        private void OnEnable()
+        {
+            
+        }
+
         void Update()
         {
             _uiPlayerTimer += Time.deltaTime;
@@ -48,6 +55,8 @@ namespace Player
                 _recordTimer.SaveTimeData();
                 _camera.gameObject.SetActive(true);
                 _currentGame.SetActive(false);  
+                
+                ResetPlayer();
             }
 
             if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
@@ -78,6 +87,17 @@ namespace Player
                 _spriteRenderer.sprite = _sprites[2];
             }
         }
+
+        private void ResetPlayer()
+        {
+            transform.position = _startPosition;
+            _left = true;
+            _spriteRenderer.sprite = _sprites[0];
+            _isJumping = false;
+            _isRunning = true;
+            _uiTimer.m_timer = 0f;
+            _uiTimer.m_isRunning = true;
+        }
         
         #endregion
         
@@ -95,7 +115,7 @@ namespace Player
         [SerializeField] private Camera _camera;
         
         private SpriteRenderer _spriteRenderer;
-       
+        private Vector3 _startPosition;
         private bool _isJumping = true;
         private Rigidbody2D _rigidbody2D;
         private bool _isRunning = true;
