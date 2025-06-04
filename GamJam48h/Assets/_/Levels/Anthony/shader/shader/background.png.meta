@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e7f88548cd1c5745a638f1b0fb7b9db
+guid: 78b2866a8d5b12e48928b168201cf081
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -103,10 +103,10 @@ TextureImporter:
       name: Fichier 12_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 49
-        width: 1495
-        height: 1341
+        x: 23
+        y: 59
+        width: 1483
+        height: 1324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 2, z: 0, w: 2}
