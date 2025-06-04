@@ -20,14 +20,12 @@ namespace Player
         
         void Start()
         {
-            _uiTimer = FindFirstObjectByType<Timer>();
             m_slider.maxValue = _sliderValue;
             m_sliderMax.maxValue = _sliderValue;
             m_sliderMin.maxValue = _sliderValue;
             _rb2D  = GetComponent<Rigidbody2D>();
             _rb2D.linearDamping = _frein;
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _recordTimer = FindFirstObjectByType<TimerData>();
         }
 
         
@@ -36,7 +34,7 @@ namespace Player
             _uiPlayerTimer += Time.deltaTime;
             if (_isRunning)
             {
-                m_slider.value -= 0.003f;
+                m_slider.value -= _removeslider;
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     m_slider.value += _jumpForce;
@@ -76,9 +74,8 @@ namespace Player
                 _uiTimer.m_isRunning = false;
                 _changeGame.SetActive(true);
                 _recordTimer.SaveTimeData();
+                _camera.gameObject.SetActive(true);
                 _currentGame.SetActive(false);
-                
-                
             }
         }
 
@@ -124,12 +121,14 @@ namespace Player
         [SerializeField] private GameObject _changeGame;
         [SerializeField] private GameObject _currentGame;
         [SerializeField] private float _removeslider = 0.03f;
+        [SerializeField] private Timer _uiTimer;
+        [SerializeField] private TimerData _recordTimer;
+        [SerializeField] private Camera _camera;
         
         private SpriteRenderer _spriteRenderer;
         private float _changeZone;
         private float _randomRange;
-        private Timer _uiTimer;
-        private TimerData _recordTimer;
+
         private Rigidbody2D _rb2D;
         private bool _isRunning = true;
         private int _spriteIndex;

@@ -8,10 +8,8 @@ namespace Player
         #region Api Unity
         void Start()
         {
-            _uiTimer = FindFirstObjectByType<Timer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _recordTimer = FindFirstObjectByType<TimerData>();
         }
         
         void Update()
@@ -48,6 +46,7 @@ namespace Player
                 _isRunning = false;
                 _uiTimer.m_isRunning = false;
                 _recordTimer.SaveTimeData();
+                _camera.gameObject.SetActive(true);
                 _currentGame.SetActive(false);  
             }
 
@@ -91,10 +90,12 @@ namespace Player
         [SerializeField] private float _uiPlayer = 0.5f;
         [SerializeField] private GameObject _changeGame;
         [SerializeField] private GameObject _currentGame;
+        [SerializeField] private Timer _uiTimer;
+        [SerializeField] private TimerData _recordTimer;
+        [SerializeField] private Camera _camera;
         
         private SpriteRenderer _spriteRenderer;
-        private Timer _uiTimer;
-        private TimerData _recordTimer;
+       
         private bool _isJumping = true;
         private Rigidbody2D _rigidbody2D;
         private bool _isRunning = true;

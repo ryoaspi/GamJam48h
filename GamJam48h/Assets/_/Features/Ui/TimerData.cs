@@ -21,9 +21,15 @@ namespace UIManager
         private void Start()
         {
             m_playerName = PlayerName.m_playerName;
-            _timer = FindFirstObjectByType<Timer>();
-            m_timer = _timer.m_timer;
-            _timerText.text = _timer.m_TimerText.text;
+            if (_timer != null)
+            {
+                m_timer = _timer.m_timer;
+                if (_timerText != null)
+                {
+                    _timerText.text = _timer.m_TimerText.text;
+                }
+            }
+            
         }
 
         #endregion
@@ -78,9 +84,6 @@ namespace UIManager
             
             
             float totalTime = 0;
-            
-            
-                
             foreach (PlayerTimeData playerData in data.players) 
             {
                 foreach (float t in playerData.m_times)
@@ -97,9 +100,10 @@ namespace UIManager
         #region Private And Protected
         
         private string _timerDataFile = "TimerData.json";
-        private Timer _timer;
+        [SerializeField] private Timer _timer;
         [SerializeField] private TMP_Text _timerText;
         
+
         #endregion
     }
 }
